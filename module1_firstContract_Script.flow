@@ -1,0 +1,5 @@
+import DoctorPatient from 0x02 
+pub fun main(account :Address ) : DoctorPatient.Patient? {
+return DoctorPatient.Doctor[account]
+}
+// gave the patient information of all the patient associated with that address 
