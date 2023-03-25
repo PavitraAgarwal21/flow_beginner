@@ -1,0 +1,11 @@
+import DoctorPatient from 0x02
+
+transaction(name: String, dateOfVisit: String, disease: String, doctorAddress :Address) {
+  prepare(acct: AuthAccount) {}
+
+  execute {
+   DoctorPatient.addPatient(name: name, dateOfVisit: dateOfVisit, disease: disease , doctorAddress : doctorAddress )
+        log("patient added. with doctor ")
+        log (doctorAddress)
+  }
+}
