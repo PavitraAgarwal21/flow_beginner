@@ -1,0 +1,27 @@
+pub contract DoctorPatient {
+
+    pub var Doctor: {Address: Patient} // doctor address is linked with the 
+    
+    pub struct Patient {
+        pub let name: String
+        pub let dateOfVisit: String
+        pub let disease :String 
+
+        init(_name: String, _dateOfVisit: String, _disease: String) {
+            self.name = _name
+            self.dateOfVisit = _dateOfVisit
+            self.disease = _disease
+           
+        }
+    }
+ //doctor address is to be filled 
+    pub fun addPatient(name: String, dateOfVisit: String, disease: String , doctorAddress : Address) {
+        let newPatient = Patient(_name: name, _dateOfVisit: dateOfVisit, _disease: disease)
+        self.Doctor[doctorAddress] = newPatient
+    }
+
+    init() {
+        self.Doctor = {} 
+    }
+
+}
